@@ -1,3 +1,4 @@
+import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 export default class StandardModel {
@@ -5,12 +6,14 @@ export default class StandardModel {
     filename,
     pos = {x: 0, y: 0, z: 0},
     scale = {x: 1, y: 1, z: 1},
+    rotation = {x: 0, y: 0, z: 0},
     wireframe =  true,
     userData = {}
   } = {}) {
     this.filename = filename
     this.pos = pos
     this.scale = scale
+    this.rotation = rotation
     this.wireframe = wireframe
     this.userData = userData
     super.load = this.load
@@ -30,6 +33,9 @@ export default class StandardModel {
       object.position.x = this.pos.x
       object.position.y = this.pos.y
       object.position.z = this.pos.z
+      object.rotation.x += this.rotation.x
+      object.rotation.y += this.rotation.y
+      object.rotation.z += this.rotation.z
       object.userData = this.userData
       scene.add(object)
     }, function(xhr) {

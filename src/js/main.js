@@ -92,15 +92,15 @@ let cube = new Cube({
 /* -------- CREATE MODELS -------- */
 let barn = new StandardModel({
   filename: './models/barn/barn_1.gltf',
-  pos: {
-    x: 0,
-    y: 0,
-    z: 0
-  },
   scale: {
     x: 2.0,
     y: 2.0,
     z: 2.0
+  },
+  rotation: {
+  	x: 0,
+  	y: -Math.PI/2,
+  	z: 0
   },
   wireframe: true
 })
@@ -146,11 +146,6 @@ let cowhead = new StandardModel({
 
 let mootext = new StandardModel({
   filename:'./models/mootext/mootext.gltf',
-  pos: {
-    x:0,
-    y:0,
-    z:0
-  },
   scale: {
     x:2,
     y:2,
