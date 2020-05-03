@@ -20,6 +20,7 @@ import SceneSpotLight from 'Components/SceneSpotLight'
 // OBJECTS
 import Ball from 'Objects/Ball'
 import Cube from 'Objects/Cube'
+import Plane from 'Objects/Mesh'
 
 // MODELS
 import StandardModel from 'Models/StandardModel'
@@ -30,6 +31,7 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass'
 
 import { EffectShader } from 'Shaders'
+
 
 /* ------- GLOBAL VARIABLES --------*/
 global.mouse = new THREE.Vector2()
@@ -89,18 +91,29 @@ let cube = new Cube({
   resolution: 50
 })
 
+let mesh = new Plane({
+  pos: {
+    x: 70,
+    y: 70,
+    z: 30
+  },
+  texture: new THREE.TextureLoader().load('./models/textures/judgement.png')
+})
+
+/* sean. I don't know what I'm doing... I'm sorry if this messes up ur organization.  */
+
 /* -------- CREATE MODELS -------- */
 let barn = new StandardModel({
   filename: './models/barn/barn_1.gltf',
   scale: {
     x: 2.0,
     y: 2.0,
-    z: 2.0
+    z: 3.2
   },
   rotation: {
-  	x: 0,
-  	y: -Math.PI/2,
-  	z: 0
+    x: 0,
+    y: -Math.PI/2,
+    z: 0
   },
   wireframe: true
 })
@@ -127,9 +140,9 @@ let greenhouse = new StandardModel({
 let cowhead = new StandardModel({
   filename:'./models/cow/bakedcowpie.gltf',
   pos: {
-    x:50,
+    x:-26,
     y:20,
-    z:0
+    z:-120
 
   },
   scale: {
@@ -146,6 +159,11 @@ let cowhead = new StandardModel({
 
 let mootext = new StandardModel({
   filename:'./models/mootext/mootext.gltf',
+  pos: {
+    x: 0,
+    y: 50,
+    z: 0
+  },
   scale: {
     x:2,
     y:2,
@@ -177,6 +195,103 @@ let cooler = new StandardModel({
   }
 })
 
+let bear = new StandardModel({
+  filename:'./models/bear/bear2.gltf',
+  pos: {
+    x:80,
+    y:8,
+    z:-60
+  },
+  scale: {
+    x:0.4,
+    y:0.4,
+    z:0.4
+  },
+  wireframe: false,
+   userData: {
+    video: 'some_url_bear.com',
+    description: 'Blah blah blah whatever bear'
+  }
+})
+
+let brain = new StandardModel({
+  filename:'./models/brain/brain_1.gltf',
+  pos: {
+    x:-140,
+    y:5,
+    z:75
+  },
+  scale: {
+    x:0.1,
+    y:0.1,
+    z:0.1
+  },
+  wireframe: false,
+   userData: {
+    video: 'some_url_brain.com',
+    description: 'Blah blah blah whatever brain'
+  }
+})
+
+let boots = new StandardModel({
+  filename:'./models/boot/boots.gltf',
+  pos: {
+    x:95,
+    y:0,
+    z:115
+  },
+  scale: {
+    x:0.15,
+    y:0.15,
+    z:0.15
+  },
+  wireframe: false,
+    userData: {
+    video: 'some_url_boot.com',
+    description: 'Blah blah blah whatever boots'
+  }
+})
+
+let oink = new StandardModel({
+  filename:'./models/oink/bignose.gltf',
+  pos: {
+    x:-15,
+    y:0,
+    z:70
+  },
+  scale: {
+    x:0.05,
+    y:0.05,
+    z:0.05
+  },
+  wireframe: false,
+    userData: {
+    video: 'some_url_nose.com',
+    description: 'oink oink whatever moo'
+  }
+})
+
+let maze = new StandardModel({
+  filename:'./models/maze/grid.gltf',
+  pos: {
+    x:0,
+    y:0,
+    z:0
+  },
+  scale: {
+    x:0.6,
+    y:0.5,
+    z:0.7
+  },
+  wireframe: false,
+    userData: {
+    video: 'some_url_maze.com',
+    description: 'oink oink whatever moo'
+  }
+})
+
+
+
 /* -------- START -------- */
 const init = () => {
   // --- add renderer to container ---
@@ -194,6 +309,7 @@ const init = () => {
   // --- add objects to scene ---
   scene.add(ball)
   scene.add(cube)
+  scene.add(mesh)
 
   // --- add camera controls to scene ---
   global.controls = new OrbitControls( global.camera, global.renderer.domElement )
@@ -203,11 +319,16 @@ const init = () => {
   global.controls.rotateSpeed = - 0.25
 
   // --- add models to scene ---
-  greenhouse.load()
+  //greenhouse.load()
   cowhead.load()
   barn.load()
   cooler.load()
   mootext.load()
+  bear.load()
+  maze.load()
+  brain.load()
+  // boots.load()
+  oink.load()
 }
 init()
 
@@ -224,6 +345,8 @@ const loop = () => {
     u_time: time
   })
 
+  mesh.update({rotate: {x: 0, y: 0.05, z: 0}})
+
   // --- UPDATE TIME & STATS --
   time += 0.1
   stats.update()
@@ -239,11 +362,6 @@ loop()
 window.addEventListener('resize', () => {
   let width = window.innerWidth
   let height = window.innerHeight
-
-  // update ball u_resolution
-  ball.update({
-    u_resolution: [width, height]
-  })
 
   // update camera projection matrix
   camera.aspect = width / height

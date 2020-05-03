@@ -17,4 +17,12 @@ npm run dev
 in the root directory. The site should be running at `localhost:8080`
 
 :sparkles:
-![cow](threejs/examples/textures/cow.png)
+
+![cow](models/textures/cow.png)
+
+:eyes:
+
+![sea](models/textures/bean.png)
+
+![tee](models/textures/tee.png)
+
