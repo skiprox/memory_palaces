@@ -172,7 +172,8 @@ let mootext = new StandardModel({
   wireframe: false,
   userData: {
     video: 'some_url_moo.com',
-    description: 'Blah blah blah whatever moo text'
+    description: 'Blah blah blah whatever moo text',
+    popupElem: '.moo-text'
   }
 })
 
@@ -191,7 +192,8 @@ let cooler = new StandardModel({
   wireframe: false,
   userData: {
     video: 'some_url_cooler.com',
-    description: 'Blah blah blah whatever cooler'
+    description: 'Blah blah blah whatever cooler',
+    popupElem: '.cooler'
   }
 })
 
