@@ -18,8 +18,6 @@ import SceneAmbientLight from 'Components/SceneAmbientLight'
 import SceneSpotLight from 'Components/SceneSpotLight'
 
 // OBJECTS
-import Ball from 'Objects/Ball'
-import Cube from 'Objects/Cube'
 import Plane from 'Objects/Mesh'
 
 // MODELS
@@ -178,14 +176,14 @@ let mootext = new StandardModel({
 let cooler = new StandardModel({
   filename: './models/cooler/cooler-camo.gltf',
   pos: {
-    x: -80,
+    x: -128,
     y: 10,
-    z: -30
+    z: -22
   },
   scale: {
-    x: 0.1,
-    y: 0.1,
-    z: 0.1
+    x: 0.08,
+    y: 0.08,
+    z: 0.08
   },
   wireframe: false,
   userData: {
@@ -227,9 +225,10 @@ let brain = new StandardModel({
     z:0.1
   },
   wireframe: false,
-   userData: {
+  userData: {
     video: 'some_url_brain.com',
-    description: 'Blah blah blah whatever brain'
+    description: 'Blah blah blah whatever brain',
+    popupElem: '.brain-chain'
   }
 })
 
@@ -307,8 +306,6 @@ const init = () => {
   scene.add(spotLightGreen)
 
   // --- add objects to scene ---
-  scene.add(ball)
-  scene.add(cube)
   scene.add(mesh)
 
   // --- add camera controls to scene ---
@@ -334,17 +331,8 @@ init()
 
 /* -------- ANIMATION LOOP -------- */
 const loop = () => {
-  // update uniforms for ball material
-  ball.update({
-    u_amp: params.noiseStrength,
-    u_time: time
-  })
 
-  cube.update({
-    u_amp: params.noiseStrength,
-    u_time: time
-  })
-
+  // update the ball with texture
   mesh.update({rotate: {x: 0, y: 0.05, z: 0}})
 
   // --- UPDATE TIME & STATS --

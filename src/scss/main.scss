@@ -3,7 +3,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 .popup {
-	font-family: 'Hack';
+	font-family: 'Hack', ui-monospace, monospace;
 	display: none;
 	position: fixed;
 	width: 40rem;

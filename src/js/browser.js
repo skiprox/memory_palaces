@@ -2,9 +2,7 @@
 
 class Browser {
   constructor() {
-    this.elems = []
-    this.elems.push(document.querySelector('.moo-text'))
-    this.elems.push(document.querySelector('.bear'))
+    this.elems = [].slice.call(document.querySelectorAll('.popup'))
     this.addListeners()
   }
   addListeners() {
