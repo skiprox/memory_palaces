@@ -69,13 +69,13 @@ const params = {
 }
 
 /* -------- DAT GUI OPTIONS -------- */
-let gui = new dat.GUI()
-
-gui
-  .add(params, 'noiseStrength')
-  .min(0)
-  .max(50)
-  .step(0.1)
+// let gui = new dat.GUI()
+// 
+// gui
+//   .add(params, 'noiseStrength')
+//   .min(0)
+//   .max(50)
+//   .step(0.1)
 
 /* -------- STATS -------- */
 let stats = new Stats()
@@ -99,8 +99,6 @@ let mesh = new Plane({
   },
   texture: new THREE.TextureLoader().load('./models/textures/judgement.png')
 })
-
-/* sean. I don't know what I'm doing... I'm sorry if this messes up ur organization.  */
 
 /* -------- CREATE MODELS -------- */
 let barn = new StandardModel({
@@ -192,8 +190,7 @@ let cooler = new StandardModel({
   wireframe: false,
   userData: {
     video: 'some_url_cooler.com',
-    description: 'Blah blah blah whatever cooler',
-    popupElem: '.cooler'
+    description: 'Blah blah blah whatever cooler'
   }
 })
 
@@ -212,7 +209,8 @@ let bear = new StandardModel({
   wireframe: false,
    userData: {
     video: 'some_url_bear.com',
-    description: 'Blah blah blah whatever bear'
+    description: 'Blah blah blah whatever bear',
+    popupElem: '.bear'
   }
 })
 
