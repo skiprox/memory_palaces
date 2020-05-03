@@ -79,16 +79,6 @@ const params = {
 let stats = new Stats()
 
 /* -------- CREATE OBJECTS -------- */
-let ball = new Ball({
-  size: 10,
-  resolution: 50
-})
-
-let cube = new Cube({
-  size: 10,
-  resolution: 50
-})
-
 let mesh = new Plane({
   pos: {
     x: 70,
@@ -196,13 +186,18 @@ let bear = new StandardModel({
   filename:'./models/bear/bear2.gltf',
   pos: {
     x:80,
-    y:8,
+    y:40,
     z:-60
   },
   scale: {
     x:0.4,
     y:0.4,
     z:0.4
+  },
+  rotation: {
+    x: 0,
+    y: 0,
+    z: -Math.PI/2
   },
   wireframe: false,
    userData: {
