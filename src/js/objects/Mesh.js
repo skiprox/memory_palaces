@@ -19,9 +19,9 @@ export default class Plane extends Mesh {
 
   }
 
-  update({x = -20, y = 0, z = -20} = {}) {
-    if (x) this.position.x = x
-    if (y) this.position.y = y
-    if (z) this.position.z = z
+  update({rotate = {x: 0, y: 0, z: 0}}) {
+    this.rotation.x += rotate.x
+    this.rotation.y += rotate.y
+    this.rotation.z += rotate.z
   }
 }

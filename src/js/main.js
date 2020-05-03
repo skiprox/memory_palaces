@@ -327,7 +327,7 @@ const init = () => {
   bear.load()
   maze.load()
   brain.load()
-  boots.load()
+  // boots.load()
   oink.load()
 }
 init()
@@ -345,6 +345,8 @@ const loop = () => {
     u_time: time
   })
 
+  mesh.update({rotate: {x: 0, y: 0.05, z: 0}})
+
   // --- UPDATE TIME & STATS --
   time += 0.1
   stats.update()
@@ -360,11 +362,6 @@ loop()
 window.addEventListener('resize', () => {
   let width = window.innerWidth
   let height = window.innerHeight
-
-  // update ball u_resolution
-  ball.update({
-    u_resolution: [width, height]
-  })
 
   // update camera projection matrix
   camera.aspect = width / height
