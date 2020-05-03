@@ -20,6 +20,7 @@ import SceneSpotLight from 'Components/SceneSpotLight'
 // OBJECTS
 import Ball from 'Objects/Ball'
 import Cube from 'Objects/Cube'
+import Plane from 'Objects/Mesh'
 
 // MODELS
 import StandardModel from 'Models/StandardModel'
@@ -89,16 +90,15 @@ let cube = new Cube({
   size: 10,
   resolution: 50
 })
-let geometry = new THREE.IcosahedronBufferGeometry( 20, 3 );
 
-/* -------- CREATE TEXTURES-------- */
-
-var texture = new THREE.TextureLoader().load('./models/textures/judgement.png');
-var material = new THREE.MeshBasicMaterial( { map: texture } );
-
-/* -------- CREATE MESH OBJECT-------- */
-
-let mesh = new THREE.Mesh( geometry, material );
+let mesh = new Plane({
+  pos: {
+    x: 70,
+    y: 70,
+    z: 30
+  },
+  texture: new THREE.TextureLoader().load('./models/textures/judgement.png')
+})
 
 /* sean. I don't know what I'm doing... I'm sorry if this messes up ur organization.  */
 
@@ -111,9 +111,9 @@ let barn = new StandardModel({
     z: 3.2
   },
   rotation: {
-  	x: 0,
-  	y: -Math.PI/2,
-  	z: 0
+    x: 0,
+    y: -Math.PI/2,
+    z: 0
   },
   wireframe: true
 })
@@ -310,11 +310,6 @@ const init = () => {
   scene.add(ball)
   scene.add(cube)
   scene.add(mesh)
-  mesh.position.x = 70
-  mesh.position.y = 70
-  mesh.position.z = 30
-
-
 
   // --- add camera controls to scene ---
   global.controls = new OrbitControls( global.camera, global.renderer.domElement )
