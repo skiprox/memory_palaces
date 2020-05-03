@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "NODE_ENV=production webpack",
-    "dev": "mkdir -p dist && cp src/index.html dist/ && mkdir -p dist/models && cp -r models/* dist/models/ && NODE_ENV=development webpack-dev-server"
+    "dev": "mkdir -p dist && cp src/index.html dist/ && mkdir -p dist/models && cp -r models/* dist/models/ && mkdir -p dist/media && cp -r media/* dist/media/ && NODE_ENV=development webpack-dev-server"
   },
   "license": "MIT",
   "dependencies": {
@@ -16,5 +16,11 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
+  },
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1"
   }
 }

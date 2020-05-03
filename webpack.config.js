@@ -2,10 +2,14 @@ const path = require('path')
 
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
-  entry: ['@babel/polyfill', path.resolve(__dirname, 'src/js', 'main.js')],
+  entry: {
+    main: ['@babel/polyfill', path.resolve(__dirname, 'src/js', 'main.js')],
+    browser: ['@babel/polyfill', path.resolve(__dirname, 'src/js', 'browser.js')],
+    style: ['@babel/polyfill', path.resolve(__dirname, 'src', 'js/style.js')]
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -18,6 +22,17 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
       }
     ]
   },

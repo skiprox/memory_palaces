@@ -20,10 +20,37 @@
         top: 0;
         left: 0;
       }
+      .moo-text {
+        display: none;
+      }
     </style>
   </head>
   <body>
     <div id="app"></div>
-    <script src="./bundle.js"></script>
+    <article class="popup moo-text">
+      <header class="popup__header">
+        <button class="popup__close">✕</button>
+        <h1 class="popup__title">Moo Text</h1>
+      </header>
+      <section class="popup__body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur tenetur assumenda, accusantium, temporibus modi omnis minus. Adipisci, ut voluptate esse minus iste dicta repellat, dignissimos labore, iusto praesentium dolorem explicabo!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, distinctio corporis, tempore aspernatur laudantium odio, architecto saepe quos rem deleniti perspiciatis consequatur optio sunt vel iure nisi vero nulla sint.</p>
+      </section>
+    </article>
+    <article class="popup bear">
+      <header class="popup__header">
+        <button class="popup__close">✕</button>
+        <h1 class="popup__title">Bear</h1>
+      </header>
+      <section class="popup__body">
+        <video controls width="600">
+          <source src="/media/little_compeepee.mp4" type="video/mp4">
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+      </section>
+    </article>
+    <script src="./main.js"></script>
+    <script src="./browser.js"></script>
+    <script src="./style.js"></script>
   </body>
 </html>

@@ -26,6 +26,9 @@ export default class Ray extends Raycaster {
       if (intersected.userData) {
         if (Object.keys(intersected.userData).length !== 0 && intersected.userData.constructor === Object) {
           console.log('the user data', intersected.userData)
+          if (intersected.userData && intersected.userData.popupElem) {
+            document.querySelector(intersected.userData.popupElem).classList.add('active')
+          }
         }
       }
     }
