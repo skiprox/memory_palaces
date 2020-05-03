@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "start": "NODE_ENV=production webpack",
-    "dev": "mkdir -p dist && cp src/index.html dist/ && mkdir -p dist/models && cp -r models/* dist/models/ && mkdir -p dist/media && cp -r media/* dist/media/ && NODE_ENV=development webpack-dev-server"
+    "dev": "npm run copy && parallelshell \"npm run change\" \"webpack-dev-server\"",
+    "change": "onchange -i 'src/index.html' 'models/*' 'media/*' -- npm run copy",
+    "copy": "mkdir -p dist && cp src/index.html dist/ && mkdir -p dist/models && cp -r models/* dist/models/ && mkdir -p dist/media && cp -r media/* dist/media/"
   },
   "license": "MIT",
   "dependencies": {
@@ -19,6 +21,8 @@
   },
   "devDependencies": {
     "css-loader": "^3.5.3",
+    "onchange": "^7.0.2",
+    "parallelshell": "^3.0.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1"
