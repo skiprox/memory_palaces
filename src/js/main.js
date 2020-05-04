@@ -18,7 +18,7 @@ import SceneAmbientLight from 'Components/SceneAmbientLight'
 import SceneSpotLight from 'Components/SceneSpotLight'
 
 // OBJECTS
-import Plane from 'Objects/Mesh'
+import Shape from 'Objects/Shape'
 
 // MODELS
 import StandardModel from 'Models/StandardModel'
@@ -79,13 +79,28 @@ const params = {
 let stats = new Stats()
 
 /* -------- CREATE OBJECTS -------- */
-let mesh = new Plane({
+let faceBall = new Shape({
   pos: {
     x: 70,
     y: 70,
     z: 30
   },
   texture: new THREE.TextureLoader().load('./models/textures/judgement.png')
+})
+
+let welcome = new Shape({
+  type: 'box',
+  pos: {
+    x: 0,
+    y: 80,
+    z: 250
+  },
+  size: {
+    x: 120,
+    y: 80,
+    z: 2
+  },
+  texture: new THREE.TextureLoader().load('./models/textures/cow.png')
 })
 
 /* -------- CREATE MODELS -------- */
@@ -321,7 +336,8 @@ const init = () => {
   scene.add(spotLightGreen)
 
   // --- add objects to scene ---
-  scene.add(mesh)
+  scene.add(faceBall)
+  scene.add(welcome)
 
   // --- add camera controls to scene ---
   global.controls = new OrbitControls( global.camera, global.renderer.domElement )
@@ -349,7 +365,7 @@ init()
 const loop = () => {
 
   // update the ball with texture
-  mesh.update({rotate: {x: 0, y: 0.05, z: 0}})
+  faceBall.update({rotate: {x: 0, y: 0.05, z: 0}})
 
   // --- UPDATE TIME & STATS --
   time += 0.1
