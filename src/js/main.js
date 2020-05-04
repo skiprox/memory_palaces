@@ -49,10 +49,10 @@ global.renderer = new Renderer({
 
 /* -------- LIGHTING -------- */
 global.ambientLight = new SceneAmbientLight()
-global.spotLightRed = new SceneSpotLight(0xff4422, {x: 100, y: 100, z: 100})
-global.spotLightBlue = new SceneSpotLight(0x2244ff, {x: -100, y: 100, z: -100})
-global.spotLightGreen = new SceneSpotLight(0x22ff44, {x: 100, y: 100, z: -100})
-global.spotLightYellow = new SceneSpotLight(0xffff22, {x: -100, y: 100, z: 100})
+global.spotLightRed = new SceneSpotLight(0xff4422, {x: 200, y: 100, z: 200})
+global.spotLightBlue = new SceneSpotLight(0x2244ff, {x: -200, y: 100, z: -200})
+global.spotLightGreen = new SceneSpotLight(0x22ff44, {x: 200, y: 100, z: -200})
+global.spotLightYellow = new SceneSpotLight(0xffff22, {x: -200, y: 100, z: 200})
 
 let time = 0
 
@@ -269,13 +269,18 @@ let fire = new StandardModel({
   filename:'./models/fire/campfire.gltf',
   pos: {
     x: 60,
-    y: 40,
-    z: 180
+    y: 2,
+    z: -180
   },
   scale: {
     x: 3,
     y: 3,
     z: 3
+  },
+  rotation: {
+    x: 0,
+    y: -Math.PI/4,
+    z: 0
   },
   wireframe: false
 })
