@@ -265,6 +265,21 @@ let oink = new StandardModel({
   }
 })
 
+let fire = new StandardModel({
+  filename:'./models/fire/campfire.gltf',
+  pos: {
+    x: 60,
+    y: 10,
+    z: -180
+  },
+  scale: {
+    x: 3,
+    y: 3,
+    z: 3
+  },
+  wireframe: false
+})
+
 let maze = new StandardModel({
   filename:'./models/maze/grid.gltf',
   pos: {
@@ -317,6 +332,7 @@ const init = () => {
   cooler.load()
   mootext.load()
   bear.load()
+  fire.load()
   maze.load()
   brain.load()
   // boots.load()
