@@ -269,8 +269,8 @@ let fire = new StandardModel({
   filename:'./models/fire/campfire.gltf',
   pos: {
     x: 60,
-    y: 10,
-    z: -180
+    y: 40,
+    z: 180
   },
   scale: {
     x: 3,

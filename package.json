@@ -4,7 +4,7 @@
   "scripts": {
     "start": "NODE_ENV=production webpack",
     "dev": "npm run copy && parallelshell \"npm run change\" \"webpack-dev-server\"",
-    "change": "onchange -i 'src/index.html' 'models/*' 'media/*' -- npm run copy",
+    "change": "onchange -i 'src/index.html' 'models/**/*' 'media/**/*' -- npm run copy",
     "copy": "mkdir -p dist && cp src/index.html dist/ && mkdir -p dist/models && cp -r models/* dist/models/ && mkdir -p dist/media && cp -r media/* dist/media/"
   },
   "license": "MIT",
