@@ -197,6 +197,21 @@ let cooler = new StandardModel({
   }
 })
 
+let coffee = new StandardModel({
+  filename: './models/coffee/coffee-with-bubbles.gltf',
+  pos: {
+    x: -142,
+    y: 10,
+    z: 128
+  },
+  scale: {
+    x: 2,
+    y: 2,
+    z: 2
+  },
+  wireframe: false
+})
+
 let bear = new StandardModel({
   filename:'./models/bear/bear2.gltf',
   pos: {
@@ -351,6 +366,7 @@ const init = () => {
   cowhead.load()
   barn.load()
   cooler.load()
+  coffee.load()
   mootext.load()
   bear.load()
   fire.load()
