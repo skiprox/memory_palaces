@@ -18,7 +18,7 @@ import SceneAmbientLight from 'Components/SceneAmbientLight'
 import SceneSpotLight from 'Components/SceneSpotLight'
 
 // OBJECTS
-import Plane from 'Objects/Mesh'
+import Shape from 'Objects/Shape'
 
 // MODELS
 import StandardModel from 'Models/StandardModel'
@@ -49,10 +49,10 @@ global.renderer = new Renderer({
 
 /* -------- LIGHTING -------- */
 global.ambientLight = new SceneAmbientLight()
-global.spotLightRed = new SceneSpotLight(0xff4422, {x: 100, y: 100, z: 100})
-global.spotLightBlue = new SceneSpotLight(0x2244ff, {x: -100, y: 100, z: -100})
-global.spotLightGreen = new SceneSpotLight(0x22ff44, {x: 100, y: 100, z: -100})
-global.spotLightYellow = new SceneSpotLight(0xffff22, {x: -100, y: 100, z: 100})
+global.spotLightRed = new SceneSpotLight(0xff4422, {x: 200, y: 100, z: 200})
+global.spotLightBlue = new SceneSpotLight(0x2244ff, {x: -200, y: 100, z: -200})
+global.spotLightGreen = new SceneSpotLight(0x22ff44, {x: 200, y: 100, z: -200})
+global.spotLightYellow = new SceneSpotLight(0xffff22, {x: -200, y: 100, z: 200})
 
 let time = 0
 
@@ -79,13 +79,28 @@ const params = {
 let stats = new Stats()
 
 /* -------- CREATE OBJECTS -------- */
-let mesh = new Plane({
+let faceBall = new Shape({
   pos: {
     x: 70,
     y: 70,
     z: 30
   },
   texture: new THREE.TextureLoader().load('./models/textures/judgement.png')
+})
+
+let welcome = new Shape({
+  type: 'box',
+  pos: {
+    x: 0,
+    y: 80,
+    z: 250
+  },
+  size: {
+    x: 120,
+    y: 80,
+    z: 2
+  },
+  texture: new THREE.TextureLoader().load('./models/textures/cow.png')
 })
 
 /* -------- CREATE MODELS -------- */
@@ -181,6 +196,21 @@ let cooler = new StandardModel({
     video: 'some_url_cooler.com',
     description: 'Blah blah blah whatever cooler'
   }
+})
+
+let coffee = new StandardModel({
+  filename: './models/coffee/coffee-with-bubbles.gltf',
+  pos: {
+    x: -142,
+    y: 10,
+    z: 128
+  },
+  scale: {
+    x: 2,
+    y: 2,
+    z: 2
+  },
+  wireframe: false
 })
 
 let bear = new StandardModel({
@@ -291,13 +321,18 @@ let fire = new StandardModel({
   filename:'./models/fire/campee.gltf',
   pos: {
     x: 60,
-    y: 40,
-    z: -150
+    y: 2,
+    z: -180
   },
   scale: {
     x: 3,
     y: 3,
     z: 3
+  },
+  rotation: {
+    x: 0,
+    y: -Math.PI/4,
+    z: 0
   },
   wireframe: false
 })
@@ -375,7 +410,8 @@ const init = () => {
   scene.add(spotLightGreen)
 
   // --- add objects to scene ---
-  scene.add(mesh)
+  scene.add(faceBall)
+  scene.add(welcome)
 
   // --- add camera controls to scene ---
   global.controls = new OrbitControls( global.camera, global.renderer.domElement )
@@ -389,6 +425,7 @@ const init = () => {
   cowhead.load()
   barn.load()
   cooler.load()
+  coffee.load()
   mootext.load()
   bear.load()
   fire.load()
@@ -407,7 +444,7 @@ init()
 const loop = () => {
 
   // update the ball with texture
-  mesh.update({rotate: {x: 0, y: 0.05, z: 0}})
+  faceBall.update({rotate: {x: 0, y: 0.05, z: 0}})
 
   // --- UPDATE TIME & STATS --
   time += 0.1
