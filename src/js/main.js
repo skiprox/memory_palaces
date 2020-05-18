@@ -139,7 +139,8 @@ let cowhead = new StandardModel({
   wireframe: false,
   userData: {
     video: 'some_url_cowhead.com',
-    description: 'Blah blah blah whatever cow head'
+    description: 'Blah blah blah whatever cow head',
+    popupElem: '.cowpie'
   }
 })
 
@@ -242,7 +243,27 @@ let boots = new StandardModel({
   wireframe: false,
     userData: {
     video: 'some_url_boot.com',
-    description: 'Blah blah blah whatever boots'
+    description: 'Blah blah blah whatever boots',
+    popupElem: '.zero_one'
+  }
+})
+let rat = new StandardModel({
+  filename:'./models/rat/rat.gltf',
+  pos: {
+    x:-65,
+    y:30,
+    z:-90
+  },
+  scale: {
+    x:3,
+    y:3,
+    z:3
+  },
+  wireframe: false,
+    userData: {
+    video: 'some_url_rat.com',
+    description: 'Blah blah blah whatever rat',
+    popupElem: '.ratchat'
   }
 })
 
@@ -261,16 +282,17 @@ let oink = new StandardModel({
   wireframe: false,
     userData: {
     video: 'some_url_nose.com',
-    description: 'oink oink whatever moo'
+    description: 'oink oink whatever moo',
+    popupElem: '.trumoo'
   }
 })
 
 let fire = new StandardModel({
-  filename:'./models/fire/campfire.gltf',
+  filename:'./models/fire/campee.gltf',
   pos: {
     x: 60,
     y: 40,
-    z: 180
+    z: -150
   },
   scale: {
     x: 3,
@@ -298,6 +320,43 @@ let maze = new StandardModel({
     description: 'oink oink whatever moo'
   }
 })
+let hat = new StandardModel({
+  filename:'./models/hat/cowboyhat.gltf',
+  pos: {
+    x:70,
+    y:30,
+    z:50
+  },
+  scale: {
+    x:3,
+    y:3,
+    z:3
+  },
+  wireframe: false,
+    userData: {
+    video: 'some_url_hat.com',
+    description: 'Blah blah blah whatever hat'
+  }
+})
+let floppy = new StandardModel({
+  filename:'./models/floppy/floppygl.gltf',
+  pos: {
+    x:-140,
+    y:20,
+    z:-175
+  },
+  scale: {
+    x:0.05,
+    y:0.05,
+    z:0.05
+  },
+  wireframe: false,
+    userData: {
+    video: 'some_url_floppy.com',
+    description: 'Blah blah blah whatever floppy'
+  }
+})
+
 
 
 
@@ -335,8 +394,12 @@ const init = () => {
   fire.load()
   maze.load()
   brain.load()
-  // boots.load()
+  boots.load()
   oink.load()
+  rat.load()
+  hat.load()
+  floppy.load()
+
 }
 init()
 
