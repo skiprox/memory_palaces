@@ -58,4 +58,7 @@ body {
 	video {
 		outline: none;
 	}
+	img, video {
+		max-width: 100%;
+	}
 }

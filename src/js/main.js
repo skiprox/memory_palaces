@@ -131,11 +131,7 @@ let greenhouse = new StandardModel({
     y: 5.5,
     z: 5.5
   },
-  wireframe: false,
-  userData: {
-    video: 'some_url_greenhouse.com',
-    description: 'Blah blah blah whatever greenhouse'
-  }
+  wireframe: false
 })
 
 let cowhead = new StandardModel({
@@ -153,8 +149,6 @@ let cowhead = new StandardModel({
   },
   wireframe: false,
   userData: {
-    video: 'some_url_cowhead.com',
-    description: 'Blah blah blah whatever cow head',
     popupElem: '.cowpie'
   }
 })
@@ -173,8 +167,6 @@ let mootext = new StandardModel({
   },
   wireframe: false,
   userData: {
-    video: 'some_url_moo.com',
-    description: 'Blah blah blah whatever moo text',
     popupElem: '.moo-text'
   }
 })
@@ -191,11 +183,7 @@ let cooler = new StandardModel({
     y: 0.08,
     z: 0.08
   },
-  wireframe: false,
-  userData: {
-    video: 'some_url_cooler.com',
-    description: 'Blah blah blah whatever cooler'
-  }
+  wireframe: false
 })
 
 let coffee = new StandardModel({
@@ -210,7 +198,10 @@ let coffee = new StandardModel({
     y: 2,
     z: 2
   },
-  wireframe: false
+  wireframe: false,
+  userData: {
+    popupElem: '.coffee'
+  }
 })
 
 let bear = new StandardModel({
@@ -231,9 +222,7 @@ let bear = new StandardModel({
     z: -Math.PI/2
   },
   wireframe: false,
-   userData: {
-    video: 'some_url_bear.com',
-    description: 'Blah blah blah whatever bear',
+  userData: {
     popupElem: '.bear'
   }
 })
@@ -311,8 +300,6 @@ let oink = new StandardModel({
   },
   wireframe: false,
     userData: {
-    video: 'some_url_nose.com',
-    description: 'oink oink whatever moo',
     popupElem: '.trumoo'
   }
 })
@@ -349,11 +336,7 @@ let maze = new StandardModel({
     y:0.5,
     z:0.7
   },
-  wireframe: false,
-    userData: {
-    video: 'some_url_maze.com',
-    description: 'oink oink whatever moo'
-  }
+  wireframe: false
 })
 let hat = new StandardModel({
   filename:'./models/hat/cowboyhat.gltf',
@@ -367,11 +350,7 @@ let hat = new StandardModel({
     y:3,
     z:3
   },
-  wireframe: false,
-    userData: {
-    video: 'some_url_hat.com',
-    description: 'Blah blah blah whatever hat'
-  }
+  wireframe: false
 })
 let floppy = new StandardModel({
   filename:'./models/floppy/floppygl.gltf',
@@ -385,11 +364,7 @@ let floppy = new StandardModel({
     y:0.05,
     z:0.05
   },
-  wireframe: false,
-    userData: {
-    video: 'some_url_floppy.com',
-    description: 'Blah blah blah whatever floppy'
-  }
+  wireframe: false
 })
 
 
