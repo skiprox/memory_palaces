@@ -92,15 +92,15 @@ let welcome = new Shape({
   type: 'box',
   pos: {
     x: 0,
-    y: 80,
+    y: 100,
     z: 250
   },
   size: {
     x: 120,
-    y: 80,
-    z: 2
+    y: 10,
+    z: 5
   },
-  texture: new THREE.TextureLoader().load('./models/textures/cow.png')
+  texture: new THREE.TextureLoader().load('./models/textures/welcome2.gif')
 })
 
 /* -------- CREATE MODELS -------- */
@@ -364,7 +364,10 @@ let floppy = new StandardModel({
     y:0.05,
     z:0.05
   },
-  wireframe: false
+  wireframe: false,
+   userData: {
+    popupElem: '.beepboop'
+  }
 })
 
 
