@@ -51,7 +51,7 @@ module.exports = {
   },
   devServer: {
     port: process.env.PORT || 8080, // it's possible to specific which port you'd prefer to use
-    writeToDisk: true,
+    writeToDisk: false,
     contentBase: path.resolve(__dirname, 'dist'),
     hot: true
   }
