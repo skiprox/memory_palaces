@@ -85,7 +85,7 @@ let faceBall = new Shape({
     y: 70,
     z: 30
   },
-  texture: new THREE.TextureLoader().load('./models/textures/judgement.png')
+  texture: new THREE.TextureLoader().load('models/textures/judgement.png')
 })
 
 let welcome = new Shape({
@@ -100,12 +100,12 @@ let welcome = new Shape({
     y: 10,
     z: 5
   },
-  texture: new THREE.TextureLoader().load('./models/textures/welcome2.gif')
+  texture: new THREE.TextureLoader().load('models/textures/welcome2.gif')
 })
 
 /* -------- CREATE MODELS -------- */
 let barn = new StandardModel({
-  filename: './models/barn/barn_1.gltf',
+  filename: 'models/barn/barn_1.gltf',
   scale: {
     x: 2.0,
     y: 2.0,
@@ -120,7 +120,7 @@ let barn = new StandardModel({
 })
 
 let greenhouse = new StandardModel({
-  filename: './models/greenhouse/greenhousse2.gltf',
+  filename: 'models/greenhouse/greenhousse2.gltf',
   pos: {
     x: 100,
     y: 0,
@@ -135,7 +135,7 @@ let greenhouse = new StandardModel({
 })
 
 let cowhead = new StandardModel({
-  filename:'./models/cow/bakedcowpie.gltf',
+  filename:'models/cow/bakedcowpie.gltf',
   pos: {
     x:-26,
     y:20,
@@ -154,7 +154,7 @@ let cowhead = new StandardModel({
 })
 
 let mootext = new StandardModel({
-  filename:'./models/mootext/mootext.gltf',
+  filename:'models/mootext/mootext.gltf',
   pos: {
     x: 0,
     y: 50,
@@ -172,7 +172,7 @@ let mootext = new StandardModel({
 })
 
 let cooler = new StandardModel({
-  filename: './models/cooler/cooler-camo.gltf',
+  filename: 'models/cooler/cooler-camo.gltf',
   pos: {
     x: -128,
     y: 10,
@@ -187,7 +187,7 @@ let cooler = new StandardModel({
 })
 
 let coffee = new StandardModel({
-  filename: './models/coffee/coffee-with-bubbles.gltf',
+  filename: 'models/coffee/coffee-with-bubbles.gltf',
   pos: {
     x: -142,
     y: 10,
@@ -205,7 +205,7 @@ let coffee = new StandardModel({
 })
 
 let bear = new StandardModel({
-  filename:'./models/bear/bear2.gltf',
+  filename:'models/bear/bear2.gltf',
   pos: {
     x:80,
     y:40,
@@ -228,7 +228,7 @@ let bear = new StandardModel({
 })
 
 let brain = new StandardModel({
-  filename:'./models/brain/brain_1.gltf',
+  filename:'models/brain/brain_1.gltf',
   pos: {
     x:-140,
     y:5,
@@ -248,7 +248,7 @@ let brain = new StandardModel({
 })
 
 let boots = new StandardModel({
-  filename:'./models/boot/boots.gltf',
+  filename:'models/boot/boots.gltf',
   pos: {
     x:95,
     y:0,
@@ -267,7 +267,7 @@ let boots = new StandardModel({
   }
 })
 let rat = new StandardModel({
-  filename:'./models/rat/rat.gltf',
+  filename:'models/rat/rat.gltf',
   pos: {
     x:-65,
     y:30,
@@ -287,7 +287,7 @@ let rat = new StandardModel({
 })
 
 let oink = new StandardModel({
-  filename:'./models/oink/bignose.gltf',
+  filename:'models/oink/bignose.gltf',
   pos: {
     x:-15,
     y:0,
@@ -305,7 +305,7 @@ let oink = new StandardModel({
 })
 
 let fire = new StandardModel({
-  filename:'./models/fire/campee.gltf',
+  filename:'models/fire/campee.gltf',
   pos: {
     x: 60,
     y: 2,
@@ -325,7 +325,7 @@ let fire = new StandardModel({
 })
 
 let maze = new StandardModel({
-  filename:'./models/maze/grid.gltf',
+  filename:'models/maze/grid.gltf',
   pos: {
     x:0,
     y:0,
@@ -339,7 +339,7 @@ let maze = new StandardModel({
   wireframe: false
 })
 let hat = new StandardModel({
-  filename:'./models/hat/cowboyhat.gltf',
+  filename:'models/hat/cowboyhat.gltf',
   pos: {
     x:70,
     y:30,
@@ -353,7 +353,7 @@ let hat = new StandardModel({
   wireframe: false
 })
 let floppy = new StandardModel({
-  filename:'./models/floppy/floppygl.gltf',
+  filename:'models/floppy/floppygl.gltf',
   pos: {
     x:-140,
     y:20,
